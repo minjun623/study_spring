@@ -11,16 +11,16 @@ public class ByeController {
     public String sayBye(@RequestParam(defaultValue = "World") String name) {
         /*
             url 양식 (키워드 인자)
-            /hello -> param: default -> Hello, World!
-            /hello?name=mario -> param: mario -> Hello, mario!
+            /bye -> param: default -> Bye, World!
+            /bye?name=mario -> param: mario -> Bye, mario!
         */
         return "Bye, " + name + "!";
     }
     @GetMapping("/bye/{name}")
     public String sayByeByPath(@PathVariable String name){
         /*
-            url 양식 (URL 경로에 )
-            /hello/mario -> param: mario -> Hello, mario!
+            url 양식 (위치)
+            /bye/mario -> param: mario -> Bye, mario!
         */
         return "Bye, " + name + "!";
     }
